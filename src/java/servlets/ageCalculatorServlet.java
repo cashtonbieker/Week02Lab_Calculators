@@ -64,15 +64,12 @@ public class ageCalculatorServlet extends HttpServlet {
             if (currentage <= 0){
                 request.setAttribute("errorMsg", "Please enter an age greater than 0");
                 
-                getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp")
-                        .forward(request, response);
-                return;
             }
             currentage += 1;
             request.setAttribute("result", currentage);
         }
         catch (NumberFormatException e){
-            request.setAttribute("errorMsg", "Please enter valid age");
+            request.setAttribute("errorMsg", "Please enter your current age");
         }
         getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp")
                         .forward(request, response);

@@ -22,25 +22,24 @@
                     </tr>
                     <tr>
                         <td><label>Second: </label></td>
-                        <td><input type="text" name="second" value="${second}"></td>
+                        <td><input type="text" name="second"  value="${second}"><td>
                     </tr>
                 </tbody>
             </table>
             <table border="0" cellspacing="3" cellpadding="3">
                 <tbody>
                     <tr>
-                        <td><input type="submit" value="+"></td>
-                        <td><input type="submit" value="-"></td>
-                        <td><input type="submit" value="*"></td>
-                        <td><input type="submit" value="/"></td>
+                        <td><input type="submit" name="add" value="+"></td>
+                        <td><input type="submit" name="subtract" value="-"></td>
+                        <td><input type="submit" name="multiply" value="*"></td>
+                        <td><input type="submit" name="divide" value="/"></td>
                     </tr>
                 </tbody>
             </table>
-            <p>${errorMsg}</p>
             <br>
-            <p>Result: </p><p value="${result}"></p>
+            <p>Result: ${result}</p>
             <br>
-            ${result}
+            
         </form>
             <a href="./ageCalculator">Age Calculator</a>
     </body>
