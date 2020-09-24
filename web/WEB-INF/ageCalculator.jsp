@@ -34,7 +34,8 @@
                 <br>
                 Age at your next birthday: ${result}
             </p>   
-            
         </form>
+            <br>
+            <a href="./arithmeticCalculator">Arithmetic Calculator</a>
     </body>
 </html>
