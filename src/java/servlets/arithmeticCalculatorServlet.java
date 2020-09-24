@@ -40,6 +40,7 @@ public class arithmeticCalculatorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //Set the default result to ---
         request.setAttribute("result", "---");
         getServletContext().getRequestDispatcher("/WEB-INF/arithmeticCalculator.jsp")
                         .forward(request, response);
@@ -56,39 +57,48 @@ public class arithmeticCalculatorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        //Attributes
         String strFirst = request.getParameter("first");
         String strSecond = request.getParameter("second");
-        
-        
-        
         int first;
         int second;
         int result = 0;
         
+        //Calculate the specified numbers
         try {
             first = Integer.parseInt(strFirst);
             second = Integer.parseInt(strSecond);
             
+            //Add the values if the add button was pressed
             if (request.getParameter("add") != null){
                 result = first + second;
             }
+            //Subtract the values if the subtract button was pressed
             else if (request.getParameter("subtract") != null){
                 result = first - second;
             }
+            //Multiply the values if the multiply button was pressed
             else if (request.getParameter("multiply") != null){
                 result = first * second;
             }
+            //Divide the values if the divide button was pressed
             else if (request.getParameter("divide") != null){
                 result = first / second;
             }
-            request.setAttribute("result", result);
+            
+            //Pass the inputed numbers back to the form
             request.setAttribute("first", strFirst);
             request.setAttribute("second", strSecond);
+            
+            //Display the result
+            request.setAttribute("result", result);
         }
+        
+        //If either of the inputed numbers are not an integer send error message
         catch (NumberFormatException e){
             request.setAttribute("result", "Invalid.");
         }
-        
         getServletContext().getRequestDispatcher("/WEB-INF/arithmeticCalculator.jsp")
                         .forward(request, response);
     }

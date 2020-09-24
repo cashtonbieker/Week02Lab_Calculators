@@ -12,8 +12,7 @@
         <title>Age Calculator</title>
     </head>
     <body>
-        <br>
-            <h1>Age Calculator</h1>
+        <h1>Age Calculator</h1>
         <form action="ageCalculator" method="post">
             <table border="0" cellpadding="0">
                 <tbody>
@@ -27,13 +26,9 @@
                     </tr>
                 </tbody>
             </table>
-            
-            <p>${errorMsg}</p> 
-            <br>
-            <p>Age at your next birthday: ${result}</p>
-              
+            <p> ${errorMsg} ${result} </p> 
         </form>
-            <br>
-            <a href="./arithmeticCalculator">Arithmetic Calculator</a>
+        <br>
+        <a href="./arithmeticCalculator">Arithmetic Calculator</a>
     </body>
 </html>

@@ -59,21 +59,27 @@ public class ageCalculatorServlet extends HttpServlet {
         //Age Calculator
         String currentageString = request.getParameter("current_age");
         int currentage;
+        
+        //calculate the age of next birthday
         try {
+            
             currentage = Integer.parseInt(currentageString);
+            
+            //If the age input is less than 0 send error message
             if (currentage <= 0){
                 request.setAttribute("errorMsg", "Please enter an age greater than 0");
-                
             }
+            
             currentage += 1;
-            request.setAttribute("result", currentage);
+            request.setAttribute("result", "Your age at your next birthday will be: " + currentage);
         }
+        //If the age input is not an integer send error message
         catch (NumberFormatException e){
+            
             request.setAttribute("errorMsg", "Please enter your current age");
         }
         getServletContext().getRequestDispatcher("/WEB-INF/ageCalculator.jsp")
                         .forward(request, response);
-        
     }
 
     /**

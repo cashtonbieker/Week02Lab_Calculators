@@ -38,9 +38,8 @@
             </table>
             <br>
             <p>Result: ${result}</p>
-            <br>
-            
         </form>
-            <a href="./ageCalculator">Age Calculator</a>
+        <br>   
+        <a href="./ageCalculator">Age Calculator</a>
     </body>
 </html>
